@@ -1,0 +1,30 @@
+footer {
+  height: 50px;
+  position: absolute;
+  text-align: left;
+  bottom: 0;
+  border-top: 3px solid #000;
+}
+
+footer>* {
+  padding: 0 1em;
+}
+
+.footer--update {
+  color: #f00;
+  font-weight: bold;
+  font-size: .65em;
+  border: 1px solid black;
+  border-radius: .20em;
+  padding: .35em;
+  background-color: #fff;
+}
+
+.footer--update::after{
+  content: " Update Needed!";
+}
+
+img {
+  cursor: pointer;
+}
+

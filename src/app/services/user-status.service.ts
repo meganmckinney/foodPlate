@@ -1,24 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { User } from '../model/user';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserStatusService {
 
-  registered: boolean;
   user: User;
+  registered: boolean;
 
-  getRegisteredStatus(currentUser) {
+  constructor(userService: UserService) {
+    this.user = userService.getUser();
+    this.registered = false;
+  }
+
+  getRegisteredStatus(currentUser: any) {
     if(currentUser.registered === true) {
       console.log(`User Registered is: ${currentUser.registered}`)
     }
   }
 
-  getUserStatus(currentUser) {
+  getUserStatus(currentUser: any) {
     console.table(currentUser);
-  }
-
-  constructor() {
   }
 }

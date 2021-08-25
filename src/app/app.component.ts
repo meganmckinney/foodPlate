@@ -1,5 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { User } from './model/user';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'fp-app',
@@ -9,7 +11,11 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private titleService: Title) {
+  @Input()
+  user: User;
+
+  constructor(private titleService: Title, userService: UserService) {
+    this.user = userService.getUser();
 
   }
 

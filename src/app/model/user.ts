@@ -19,7 +19,7 @@ export class User {
   registered: boolean;
   email: string;
 
-  constructor(id, name, gender, ageGroup, userCode, reqs, reqsStatus, registered, email) {
+  constructor(id: number, name: string, gender: string, ageGroup: string, userCode: string, reqs: any, reqsStatus: any, registered: boolean, email: string) {
       this.id = id;
       this.name = name;
       this.gender = gender;
